@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: Dimensão com dados de clientes.
+    columns:
+      - name: sk_cliente
+        description: Essa é a chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+
+      - name: id_cliente
+        description: número identificação do cliente.
+      - name: nome_cliente
+        description: nome completo do cliente.
+      - name: tipocartao_cartoescredito
+        description: tipo de cartão de crédito utilizado.
+      - name: cidade_endereco
+        description: cidade do cliente.
+      - name: nome_estado	
+        description: estado do cliente.
+      - name: nome_pais
+        description: país do cliente.
+
+
