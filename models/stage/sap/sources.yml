@@ -1,0 +1,73 @@
+
+version: 1
+
+sources:
+  - name: sap
+    description: fonte dos clientes da AW.
+    schema: sap_adw
+    tables:
+
+      - name: person
+        description: Tabela com informações de clientes.
+        columns:
+          - name: businessentityid
+            description: Chave primária da tabela clientes.
+            tests:
+              - unique
+              - not_null
+      - name: personcreditcard
+        description: Tabela com informações cartão de crédito do cliente.
+        columns:
+          - name: businessentityid
+            description: Chave primária da tabela cartão de crédito clientes.
+            tests:
+              - unique
+              - not_null
+      - name: creditcard
+        description: Tabela com informações cartão de crédito.
+        columns:
+          - name: creditcardid
+            description: Chave primária da tabela cartão de crédito.
+            tests:
+              - unique
+              - not_null      
+      - name: businessentity
+        description: Tabela1 para ligação entre pessoa e endereço.
+        columns:
+          - name: businessentityid
+            description: Chave primária da tabela de ligação entre pessoa e endereço.
+            tests:
+              - unique
+              - not_null 
+      - name: businessentityaddress
+        description: Tabela2 para ligação entre pessoa e endereço.
+        columns:
+          - name: addressid
+            description: Chave primária da tabela de ligação entre pessoa e endereço.
+            tests:
+              - unique
+              - not_null  
+      - name: address
+        description: Tabela com informação de endereço dos clientes.
+        columns:
+          - name: addressid
+            description: Chave primária da tabela de endereço dos clientes.
+            tests:
+              - unique
+              - not_null  
+      - name: stateprovince
+        description: Tabela com informação do estado.
+        columns:
+          - name: stateprovinceid
+            description: Chave primária da tabela estado.
+            tests:
+              - unique
+              - not_null  
+      - name: countryregion
+        description: Tabela com informação de país.
+        columns:
+          - name: countryregioncode
+            description: Chave primária da tabela país.
+            tests:
+              - unique
+              - not_null
