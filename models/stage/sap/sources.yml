@@ -71,3 +71,13 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: product
+        description: Tabela com informação dos produtos.
+        columns:
+          - name: productid
+            description: Chave primária da tabela produto.
+            tests:
+              - unique
+              - not_null
+      
