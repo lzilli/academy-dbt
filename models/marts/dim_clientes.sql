@@ -39,11 +39,22 @@ with
         from {{ ref('stg_sap__cartoescredito') }}
     )
 
+    , infclientes as (
+        select *
+        from {{ ref('stg_sap__infclientes') }}
+    )
+
+    , businessentitycontact as (
+        select *
+        from {{ ref('stg_sap__businessentitycontact') }}
+    )
+
     , join_tabelas as (
         select
         clientes.id_cliente	
         , clientes.nome_cliente
-        --, cartoesclientes.id_cartaocredito_cartoescliente
+        , cartoesclientes.id_cartaocredito_cartoescliente
+        , businessentitycontact.id_pessoa_businessentitycontact
         , cartoescredito.tipocartao_cartoescredito
         --, businessentityaddress.id_endereco_businessentityaddress
         , enderecos.cidade_endereco
@@ -51,10 +62,13 @@ with
         , estados.nome_estado	
         --, estados.codigo_pais_estado
         , paises.nome_pais
+        
 
-        from clientes
+        from clientes 
         left join cartoesclientes on
             clientes.id_cliente = cartoesclientes.id_cliente_cartoescliente
+        left join businessentitycontact on
+            clientes.id_cliente = businessentitycontact.id_cliente_businessentitycontact
         left join businessentityaddress on
             clientes.id_cliente = businessentityaddress.id_cliente_businessentityaddress
         left join cartoescredito on
@@ -65,6 +79,8 @@ with
              estados.id_estado_estado = enderecos.id_estado_endereco
         left join paises on
             paises.codigo_pais_pais	= estados.codigo_pais_estado
+        --left join infclientes on
+        --    infclientes.id_pessoa_clientesinf = businessentitycontact.id_pessoa_businessentitycontact
     )
     
    , transformacoes as (

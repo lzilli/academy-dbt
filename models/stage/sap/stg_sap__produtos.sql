@@ -1,6 +1,6 @@
 with
     fonte_produtos as(
-        select 
+        select
         cast(productid as int) as id_produto				
         , cast (name  as string) as nome_produto				
         -- productnumber	STRING	NULLABLE				

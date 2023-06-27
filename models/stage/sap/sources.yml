@@ -71,7 +71,22 @@ sources:
             tests:
               - unique
               - not_null
-
+      - name: businessentitycontact
+        description: Tabela com informação do id do cliente.
+        columns:
+          - name: personid
+            description: Chave primária da tabela.
+            tests:
+              - unique
+              - not_null
+      - name: customer
+        description: Tabela com informação do cliente.
+        columns:
+          - name: customerid
+            description: Chave primária da tabela.
+            tests:
+              - unique
+              - not_null
       - name: product
         description: Tabela com informação dos produtos.
         columns:
@@ -80,4 +95,11 @@ sources:
             tests:
               - unique
               - not_null
-      
+      - name: salesorderheader
+        description: Tabela com informação das ordens.   
+      - name: salesorderdetail
+        description: Tabela com detalhes das ordens.  
+      - name: specialofferproduct
+        description: Tabela com informações de promoções dos produtos. 
+      - name: specialoffer
+        description: Tabela com informações de promoções dos produtos. 
