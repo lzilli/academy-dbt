@@ -1,0 +1,26 @@
+version: 3
+
+models:
+  - name: dim_address
+    description: Dimensão com dados de endereços.
+    columns:
+      - name: sk_address
+        description: Essa é a chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+
+      - name: address_id
+        description: número identificação do endereço.
+      - name: address
+        description: descrição do endereço.
+      - name: city
+        description: cidade.
+      - name: state
+        description: estado.
+      - name: stateprovince_code
+        description: código do estado.
+      - name: countryregion_code
+        description: código do país.
+      - name: country
+        description: país.

@@ -1,11 +1,11 @@
 with
-    fonte_endereco as(
+    source_address as(
         select      
-       cast (addressid as int) as id_endereco_endereco			
-        ,cast (addressline1	as string) as endereco_endereco				
+       cast (addressid as int) as address_id	
+        ,cast (addressline1	as string)	address			
         --addressline2	STRING	NULLABLE				
-        ,cast (city	as string) as cidade_endereco				
-        ,cast (stateprovinceid as int) id_estado_endereco				
+        ,cast (city	as string) as city			
+        ,cast (stateprovinceid as int) as stateprovince_id
         --postalcode	STRING	NULLABLE				
         --spatiallocation	STRING	NULLABLE				
         --rowguid	STRING	NULLABLE				
@@ -16,4 +16,4 @@ with
     )
 
 select *
-from fonte_endereco 
+from source_address 
