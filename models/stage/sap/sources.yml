@@ -1,56 +1,24 @@
 
-version: 1
+version: 2
 
 sources:
   - name: sap
     description: fonte dos clientes da AW.
     schema: sap_adw
-    tables:
+    tables:      
 
-      - name: person
-        description: Tabela com informações de clientes.
-        columns:
-          - name: businessentityid
-            description: Chave primária da tabela clientes.
-            tests:
-              - unique
-              - not_null
-      - name: personcreditcard
-        description: Tabela com informações cartão de crédito do cliente.
-        columns:
-          - name: businessentityid
-            description: Chave primária da tabela cartão de crédito clientes.
-            tests:
-              - unique
-              - not_null
       - name: creditcard
         description: Tabela com informações cartão de crédito.
         columns:
-          - name: creditcardid
+          - name: creditcard_id
             description: Chave primária da tabela cartão de crédito.
             tests:
               - unique
               - not_null      
-      - name: businessentity
-        description: Tabela1 para ligação entre pessoa e endereço.
-        columns:
-          - name: businessentityid
-            description: Chave primária da tabela de ligação entre pessoa e endereço.
-            tests:
-              - unique
-              - not_null 
-      - name: businessentityaddress
-        description: Tabela2 para ligação entre pessoa e endereço.
-        columns:
-          - name: addressid
-            description: Chave primária da tabela de ligação entre pessoa e endereço.
-            tests:
-              - unique
-              - not_null  
       - name: address
         description: Tabela com informação de endereço dos clientes.
         columns:
-          - name: addressid
+          - name: address_id
             description: Chave primária da tabela de endereço dos clientes.
             tests:
               - unique
@@ -58,7 +26,7 @@ sources:
       - name: stateprovince
         description: Tabela com informação do estado.
         columns:
-          - name: stateprovinceid
+          - name: stateprovince_id
             description: Chave primária da tabela estado.
             tests:
               - unique
@@ -66,31 +34,15 @@ sources:
       - name: countryregion
         description: Tabela com informação de país.
         columns:
-          - name: countryregioncode
+          - name: countryregion_code
             description: Chave primária da tabela país.
-            tests:
-              - unique
-              - not_null
-      - name: businessentitycontact
-        description: Tabela com informação do id do cliente.
-        columns:
-          - name: personid
-            description: Chave primária da tabela.
-            tests:
-              - unique
-              - not_null
-      - name: customer
-        description: Tabela com informação do cliente.
-        columns:
-          - name: customerid
-            description: Chave primária da tabela.
             tests:
               - unique
               - not_null
       - name: product
         description: Tabela com informação dos produtos.
         columns:
-          - name: productid
+          - name: product_id
             description: Chave primária da tabela produto.
             tests:
               - unique
@@ -99,7 +51,19 @@ sources:
         description: Tabela com informação das ordens.   
       - name: salesorderdetail
         description: Tabela com detalhes das ordens.  
-      - name: specialofferproduct
-        description: Tabela com informações de promoções dos produtos. 
-      - name: specialoffer
-        description: Tabela com informações de promoções dos produtos. 
+      - name: salesorderheadersalesreason
+        description: Tabela com informação dos motivos de compra.
+        columns:
+          - name: salesorderid
+            description: Chave primária da tabela de motivos de compra.
+            tests:
+              - unique
+              - not_null
+      - name: salesreason
+        description: Tabela com informações dos tipos de motivo.
+        columns:
+          - name: salesreasonid
+            description: Chave primária da tabela de tipos de motivos de compra.
+            tests:
+              - unique
+              - not_null

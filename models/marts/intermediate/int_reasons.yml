@@ -1,0 +1,15 @@
+version: 3
+
+models:
+  - name: int_reasons.yml
+    description: Dimensão intermediária de motivos de compra.
+    columns:
+      - name: salesorder_id
+        description: Essa é a chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+
+      - name: salesreason_name
+        description: motivos de compra, podendo ser mais de um.
+

@@ -1,8 +1,8 @@
 with
-    fonte_produtos as(
+    source_products as(
         select
-        cast(productid as int) as id_produto				
-        , cast (name  as string) as nome_produto				
+        cast(productid as int) as product_id		
+        , cast (name  as string) as product_name				
         -- productnumber	STRING	NULLABLE				
         -- makeflag	BOOLEAN	NULLABLE				
         -- finishedgoodsflag	BOOLEAN	NULLABLE				
@@ -21,18 +21,18 @@ with
         -- style	STRING	NULLABLE				
         -- productsubcategoryid	INTEGER	NULLABLE				
         -- productmodelid	INTEGER	NULLABLE				
-        , cast (sellstartdate as string) as data_inicio_venda				
-        , cast (sellenddate	as string) as data_fim_venda			
+        , cast (sellstartdate as datetime) as sell_start_date			
+        , cast (sellenddate	as datetime)	as sell_end_date		
         -- cast (discontinueddate as int) as data_descontinuado
         -- rowguid	STRING	NULLABLE				
         -- modifieddate	STRING	NULLABLE
         , case
             when sellenddate is null then false
             else true
-        end as is_decontinuado
+        end as is_descontinued
 
         from {{ source('sap', 'product')}}
     )
 
 select *
-from fonte_produtos 
+from source_products 

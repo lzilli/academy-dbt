@@ -1,22 +1,22 @@
 version: 2
 
 models:
-  - name: dim_produtos
+  - name: dim_products
     description: Dimensão com dados de produtos.
     columns:
-      - name: sk_produto
+      - name: sk_product
         description: Essa é a chave surrogate da tabela.
         tests:
           - unique
           - not_null
 
-      - name: id_produto
+      - name: product_id
         description: número identificação do produto.
-      - name: nome_produto
+      - name: product_name
         description: nome do produto.
-      - name: data_inicio_venda
+      - name: sell_star_date
         description: data de início de venda.
-      - name: data_fim_venda
+      - name: sell_send_date
         description: data de fim de venda.
-      - name: is_decontinuado
+      - name: is_decontinued
         description: verifica se o produto está a venda ou não.

@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: Essa tabela fato com dados de vendas.
+    columns:
+      - name: sk_sale
+        description: Essa é a chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+      - name: salesorder_id	
+        description: número da ordem.
+      - name: fk_address
+        description: chave estrangeira da dimensão de endereços.
+      - name: fk_product
+        description: chave estrangeira da dimensão de podutos.
+      - name: order_date	
+        description: data da ordem.
+      - name: due_date	
+        description: data de entrega.
+      - name: account_number 
+        description: número da conta do cliente.
+      - name: customer_id
+        description: id do cliente.
+      - name: ship_to_address_id	
+        description: id do endereço do cliente.  
+      - name: creditcard_id	
+        description: id do cartão do cliente.  
+      - name: creditcard_type
+        description: tipo do cartão do cliente.  
+      - name: subtotal		
+        description: subtotal da ordem.  
+      - name: taxes		
+        description: impostos. 
+      - name: freight		
+        description: frete. 
+      - name: total		
+        description: total da ordem.
+      - name: salesorderdetail_id		
+        description: id do detalhe da ordem.
+      - name: quantity			
+        description: quatidade do produto comprada.
+      - name: unit_price				
+        description: preço unitário do produto.
+      - name: unit_price_discount			
+        description: desconto unitário do produto.
+      - name: salesreason_name			
+        description: motivo de compra.
+      - name: salesreason_name			
+        description: motivo de compra.
+      - name: city
+        description: cidade.
+      - name: state
+        description: estado.
+      - name: countryregion_code
+        description: código do país.
+      - name: product_name
+        description: nome do produto.
+      - name: is_decontinued
+        description: verifica se o produto está a venda ou não.
+
+       
+       
+      
+      
