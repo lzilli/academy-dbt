@@ -29,8 +29,6 @@ models:
         description: id do cartão do cliente.  
       - name: creditcard_type
         description: tipo do cartão do cliente.  
-      - name: subtotal		
-        description: subtotal da ordem.  
       - name: taxes		
         description: impostos. 
       - name: freight		
@@ -45,8 +43,6 @@ models:
         description: preço unitário do produto.
       - name: unit_price_discount			
         description: desconto unitário do produto.
-      - name: salesreason_name			
-        description: motivo de compra.
       - name: salesreason_name			
         description: motivo de compra.
       - name: city
