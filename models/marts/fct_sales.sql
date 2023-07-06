@@ -27,20 +27,13 @@ with
         , addresses.sk_address as fk_address
         , products.sk_product as fk_product
         , orders.order_date					
-        , orders.due_date					
-        --, orders.ship_date
-        --, orders.status				
-        --, orders.is_online_order				
-        --, orders.purchase_order_number					
+        , orders.due_date										
         , orders.account_number 					
-        , orders.customer_id				
-        --, orders.salesperson_id				
-        --, orders.bill_to_address_id			
+        , orders.customer_id						
         , orders.ship_to_address_id		
         , orders.creditcard_id				
     	, orders.creditcard_type
-        --, orders.currencyrate_id				
-        , orders.subtotal					
+        , orders.status				
         , orders.taxes				
         , orders.freight					
         , orders.total
@@ -49,14 +42,10 @@ with
         , orders.unit_price				
         , orders.unit_price_discount							
         , reasons.salesreason_name
-        --, addresses.address
         , addresses.city
         , addresses.state
-        --, addresses.stateprovince_code
         , addresses.countryregion_code        
         , products.product_name
-        --, products.sell_start_date			
-        --, products.sell_end_date	
         , products.is_descontinued
         
        
@@ -74,8 +63,7 @@ with
         select
             {{ dbt_utils.generate_surrogate_key(['salesorder_id', 'fk_product']) }} as sk_sale
             , *
-            ,  unit_price * quantity as gross_value
-            , (1 - unit_price_discount) * unit_price * quantity as net_value
+            , (1 - unit_price_discount) * unit_price * quantity as subtotal
             , case
                 when unit_price_discount > 0 then true
                 when unit_price_discount = 0 then false

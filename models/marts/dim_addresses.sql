@@ -24,14 +24,12 @@ with
         , states.state
         , states.stateprovince_code
         , states.countryregion_code
-        --, countries.countryregion_code
-        --, countries.country
+        
         
         from addresses 
         left join states on
             addresses.stateprovince_id = states.stateprovince_id
-        --left join countries on
-        --    state.countryregion_code = countries.countryregion_code
+        
     )
     
    , transformacoes as (

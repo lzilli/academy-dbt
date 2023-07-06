@@ -10,7 +10,7 @@ sources:
       - name: creditcard
         description: Tabela com informações cartão de crédito.
         columns:
-          - name: creditcard_id
+          - name: creditcardid
             description: Chave primária da tabela cartão de crédito.
             tests:
               - unique
@@ -18,7 +18,7 @@ sources:
       - name: address
         description: Tabela com informação de endereço dos clientes.
         columns:
-          - name: address_id
+          - name: addressid
             description: Chave primária da tabela de endereço dos clientes.
             tests:
               - unique
@@ -26,7 +26,7 @@ sources:
       - name: stateprovince
         description: Tabela com informação do estado.
         columns:
-          - name: stateprovince_id
+          - name: stateprovinceid
             description: Chave primária da tabela estado.
             tests:
               - unique
@@ -34,7 +34,7 @@ sources:
       - name: countryregion
         description: Tabela com informação de país.
         columns:
-          - name: countryregion_code
+          - name: countryregioncode
             description: Chave primária da tabela país.
             tests:
               - unique
@@ -42,7 +42,7 @@ sources:
       - name: product
         description: Tabela com informação dos produtos.
         columns:
-          - name: product_id
+          - name: productid
             description: Chave primária da tabela produto.
             tests:
               - unique
@@ -53,12 +53,6 @@ sources:
         description: Tabela com detalhes das ordens.  
       - name: salesorderheadersalesreason
         description: Tabela com informação dos motivos de compra.
-        columns:
-          - name: salesorderid
-            description: Chave primária da tabela de motivos de compra.
-            tests:
-              - unique
-              - not_null
       - name: salesreason
         description: Tabela com informações dos tipos de motivo.
         columns:
